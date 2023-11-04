@@ -26,7 +26,6 @@ RSpec.describe Post, type: :model do
     it 'increments author posts_counter on create' do
       user = User.create(name: 'John Doe', posts_counter: 0)
 
-
       expect do
         Post.create(title: 'Hello', author: user)
       end.to change { user.reload.posts_counter }.by(1)
