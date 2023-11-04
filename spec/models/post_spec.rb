@@ -13,6 +13,18 @@ RSpec.describe Post, type: :model do
       expect(post).to_not be_valid
       expect(post.errors[:title]).to include('is too long (maximum is 250 characters)')
     end
+
+    it 'validates CommentsCounter' do
+      post = Post.new(comments_counter: -1)
+      expect(post).to_not be_valid
+      expect(post.errors[:comments_counter]).to include('must be greater than or equal to 0')
+    end
+
+    it 'validates LikesCounter' do
+      post = Post.new(likes_counter: -1)
+      expect(post).to_not be_valid
+      expect(post.errors[:likes_counter]).to include('must be greater than or equal to 0')
+    end
   end
 
   describe 'associations' do
