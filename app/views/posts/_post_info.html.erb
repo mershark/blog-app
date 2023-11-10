@@ -11,7 +11,7 @@
 
 <% if defined?(show_comments) && show_comments && post.comments.present? %>
 <div class="comments-container">
-  <% comments.each do |comment| %>
+  <% post.most_recent_comments.each do |comment| %>
     <p>
       <%= comment.user.name %>: <%= comment.text %>
     </p>
