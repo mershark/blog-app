@@ -1,0 +1,10 @@
+<div class="profile-container">
+  <div class="profile-image-container">
+    <!-- Display user photo if available -->
+    <img class="profile-image" src="<%= user.photo %>">
+  </div>
+  <div class="profile-details">
+    <p class="profile-name"><%= link_to user.name, user_path(user) %></p>
+    <p class="profile-post-count">Number of Posts: <%= user.posts.length %></p>
+  </div>
+</div>

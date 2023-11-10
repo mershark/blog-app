@@ -1,15 +1,128 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  margin: 0;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-image-container {
+  width: 100px;
+  height: 100px;
+  border: 3px solid black;
+  margin-top: 10px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  display: flex;
+}
+
+.profile-details {
+  width: 90%;
+  height: 80px;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-size: 2em;
+  text-decoration: none;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.profile-post-count {
+  align-self: end;
+  margin-right: 10px;
+}
+
+.profile-bio-div {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 3px solid black;
+  margin-right: 12px;
+}
+
+.profile-bio-tag {
+  font-size: 1.3em;
+  margin-left: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profile-bio {
+  margin-left: 10px;
+}
+
+.see-all-button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.see-all-button {
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+  cursor: pointer;
+  box-shadow: 5px 4px 3px rgba(0, 0, 0, 32);
+  margin-top: 45px;
+  padding: 5px 11px;
+  font-size: 17px;
+}
+
+.post-container {
+  border: 3px solid black;
+  padding: 10px;
+  padding-top: 3px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.post-container h3 {
+  margin-top: 0;
+}
+
+.post-container p {
+  margin-bottom: 5px;
+}
+
+.post-container h4 {
+  margin-top: 15px;
+}
+
+.counter {
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-c-container {
+  margin-top: 10px;
+}
+
+.comments-container {
+  border: 3px solid black;
+  margin-bottom: 30px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-page-title {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}

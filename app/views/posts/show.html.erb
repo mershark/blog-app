@@ -1,1 +1,18 @@
-<h1>Here are the details for given post</h1>
+<div class="post-container">
+  <p class="post-page-title">
+    <strong><%= @post.title %> by <%= @post.author.name %></strong>
+    Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %>
+  </p>
+
+  <p><%= @post.text %></p>
+</div>
+
+<div class="comments-container">
+  <% @post.comments.each do |comment| %>
+    <div class="comment">
+      <p>
+        <%= comment.user.name %>: <%= comment.text %>
+      </p>
+    </div>
+  <% end %>
+</div>

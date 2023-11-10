@@ -52,6 +52,10 @@ Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
   Enabled: false
+Lint/Syntax:
+  Exclude:
+    - 'app/views/**/*.erb'
+    - 'app/views/**/*.html.erb'
 Style/HashEachMethods:
   Enabled: false
 Style/HashTransformKeys:

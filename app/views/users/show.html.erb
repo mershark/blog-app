@@ -1,1 +1,22 @@
-<h1>Here are the details for given user</h1>
+<div>
+  <%= render partial: 'users/user_info', locals: { user: @user } %>
+</div>
+
+<div class="profile-bio-div">
+  <p class="profile-bio-tag">Bio</p>
+  <p class="profile-bio"><%= @user.bio %></p>
+</div>
+
+<div>
+  <% @user.posts.each do |post| %>
+    <div>
+      <!-- Render the post_info partial -->
+      <%= render partial: 'posts/post_info',
+      locals: {post: post, user: @user, comments: post.comments} %>
+    </div>
+  <% end %>
+</div>
+
+<div class="see-all-button-container">
+  <%= link_to "See All Posts", user_posts_path(@user), class:"see-all-button" %>
+</div>

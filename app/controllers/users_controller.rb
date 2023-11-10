@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   def index
-    # NOTE: code to get all users
+    @users = User.all
   end
 
   def show
-    # NOTE: code to get user by id
+    @user = User.find(params[:id])
+    @posts = @user.posts
   end
 end
