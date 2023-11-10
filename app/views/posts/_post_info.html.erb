@@ -1,0 +1,20 @@
+<div class="post-container">
+  <h3><%= link_to post.title, user_post_path(user, post) %></h3>
+
+  <p class="post-content"><%= post.text %></p>
+
+  <p class="counter">
+    Comments: <%= post.comments.size %>,
+    Likes: <%= post.likes_counter.to_i %>
+  </p>
+</div>
+
+<% if defined?(show_comments) && show_comments && post.comments.present? %>
+<div class="comments-container">
+  <% post.most_recent_comments.each do |comment| %>
+    <p>
+      <%= comment.user.name %>: <%= comment.text %>
+    </p>
+  <% end %>
+</div>
+<% end %>
