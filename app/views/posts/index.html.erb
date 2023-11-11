@@ -5,15 +5,14 @@
 <div>
   <% @posts.each do |post| %>
     <div>
-      <!-- Pass the user variable to the post_info partial -->
       <%= render partial: 'post_info',
-      locals: {
-                    post: post, 
-                    comments: post.comments,
-                    user: @user,
-                    post_path: @post_path,
-                    show_comments: true
-                  } %>
+                 locals: {
+                   post: post,
+                   comments: post.comments,
+                   user: @user,
+                   post_path: @post_path,
+                   show_comments: true
+                 } %>
     </div>
   <% end %>
 </div>
@@ -25,5 +24,6 @@
 </div>
 
 <div class="see-all-button-container">
-  <%= link_to "Pagnition", user_posts_path(@user), class:"see-all-button"%>
+  <%= link_to "Pagination", user_posts_path(@user), class:"see-all-button" %>
+  <%= link_to "Create Post", new_user_post_path(@user), class:"see-all-button" %>
 </div>

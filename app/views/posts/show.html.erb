@@ -7,12 +7,20 @@
   <p><%= @post.text %></p>
 </div>
 
-<div class="comments-container">
-  <% @post.comments.each do |comment| %>
-    <div class="comment">
+<% if @post.comments.present? %>
+  <!-- Display existing comments -->
+  <div class="comments-container">
+    <% @post.comments.each do |comment| %>
       <p>
         <%= comment.user.name %>: <%= comment.text %>
       </p>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% end %>
+
+<!-- Add comment form -->
+<% if current_user %>
+  <div>
+    <%= render 'comments/form', post: @post, comment: Comment.new %>
+  </div>
+<% end %>
