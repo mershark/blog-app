@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :set_user
 
   def index
-    @posts = @user.posts
+    # Used 'includes' to eager load comments associated with each post
+    @posts = @user.posts.includes(:comments)
   end
 
   def show
