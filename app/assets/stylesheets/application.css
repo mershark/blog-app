@@ -3,6 +3,7 @@
 @import "signup";
 @import "forgot_password";
 @import "create_post";
+@import "resend_confirmation";
 
 a {
   text-decoration: none;

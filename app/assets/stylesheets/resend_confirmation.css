@@ -1,0 +1,43 @@
+.resend-confirmation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  flex-direction: column;
+}
+
+.resend-confirmation-form {
+  border: none;
+  text-align: center;
+  width: 500px;
+}
+
+.field {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.resend-confirmation-email-field input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.resend-confirmation-actions {
+  margin-top: 20px;
+}
+
+.resend-confirmation-button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 100%;
+}
