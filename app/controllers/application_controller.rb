@@ -1,6 +1,3 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user
-  def current_user
-    User.first
-  end
+  before_action :authenticate_user!
 end

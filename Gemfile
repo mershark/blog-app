@@ -66,3 +66,5 @@ group :test do
   gem 'rspec-rails'
   gem 'selenium-webdriver'
 end
+
+gem 'devise', '~> 4.9'
