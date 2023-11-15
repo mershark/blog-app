@@ -1,8 +1,18 @@
 @import "forms";
+@import "login";
+@import "signup";
+@import "forgot_password";
+@import "create_post";
+@import "resend_confirmation";
 
 a {
   text-decoration: none;
   color: black;
+}
+
+body {
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 p {
@@ -52,7 +62,6 @@ p {
   margin-top: 15px;
   margin-bottom: 15px;
   border: 3px solid black;
-  margin-right: 12px;
 }
 
 .profile-bio-tag {
@@ -87,7 +96,6 @@ p {
   border: 3px solid black;
   padding: 10px;
   padding-top: 3px;
-  margin-right: 10px;
   margin-top: 10px;
 }
 
@@ -128,4 +136,10 @@ p {
   display: flex;
   justify-content: space-between;
   padding-bottom: 20px;
+}
+
+.notice,
+.alert {
+  display: flex;
+  justify-content: center;
 }

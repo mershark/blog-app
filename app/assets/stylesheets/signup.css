@@ -1,0 +1,50 @@
+.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  flex-direction: column;
+}
+
+.signup-form {
+  border: none;
+  text-align: center;
+  width: 500px;
+}
+
+.field {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.signup-name-field input,
+.signup-email-field input,
+.signup-password-field input,
+.signup-password-confirmation-field input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.signup-actions {
+  margin-top: 20px;
+}
+
+.signup-button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 500px;
+}
+
+.signup-password-field {
+  width: 100%;
+}

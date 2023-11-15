@@ -11,6 +11,17 @@
   </head>
 
   <body>
+    <header>
+      <nav class="logout-button-nav">
+        <% if user_signed_in? %>
+          <%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'logout-button' %>
+        <% else %>
+          <!-- Nothing here -->
+        <% end %>
+      </nav>
+    </header>
+
+    <p class="notice"><%= notice %></p>
     <%= yield %>
   </body>
 </html>

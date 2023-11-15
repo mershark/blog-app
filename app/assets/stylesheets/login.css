@@ -1,0 +1,81 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  flex-direction: column;
+}
+
+.login-form {
+  border: none;
+  text-align: center;
+  width: 500px;
+}
+
+.field {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.email-field input,
+.password-field input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  margin-top: 5px;
+}
+
+.remember-me-field input[type="checkbox"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  margin-top: 5px;
+}
+
+.field-remember-me-field {
+  display: flex;
+  flex-direction: row;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.login-button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 500px;
+}
+
+.remember-me-label {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.logout-button-nav {
+  display: flex;
+  border: none;
+  justify-content: flex-end;
+}
+
+.logout-button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 100px;
+}
+
+form.button_to {
+  border: none;
+}

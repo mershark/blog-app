@@ -1,0 +1,43 @@
+.create-post-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  flex-direction: column;
+}
+
+.create-post-form {
+  border: none;
+  text-align: center;
+  width: 500px;
+}
+
+.form-group {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+.create-post-title-field input,
+.create-post-text-field textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.create-post-actions {
+  margin-top: 20px;
+}
+
+.create-post-button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 100%;
+}
