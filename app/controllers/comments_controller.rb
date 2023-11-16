@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_user_and_post
 
   def create
@@ -14,6 +15,18 @@ class CommentsController < ApplicationController
     end
 
     redirect_to user_post_path(@user, @post)
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+
+    if @comment.destroy
+      redirect_to user_post_path(@user, @post), notice: 'Comment deleted!'
+    else
+      redirect_to user_post_path(@user, @post)
+    end
   end
 
   private

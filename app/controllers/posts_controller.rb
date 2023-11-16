@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource except:
+  %i[index show]
   before_action :set_user
 
   def index
@@ -24,6 +26,15 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+    @post.likes.destroy_all
+    @post.comments.destroy_all
+    @post.destroy
+    redirect_to user_posts_path(@user), notice: 'Post deleted!'
   end
 
   private
