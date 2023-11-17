@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  after_create :make_admin
+  before_create :set_default_role
 
-  enum role: %i[user admin]
+  enum role: { user: 'user', admin: 'admin' }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
@@ -17,10 +17,14 @@ class User < ApplicationRecord
   def most_recent_posts
     posts.order(created_at: :desc).limit(3)
   end
-end
 
-private
+  def admin?
+    role == 'admin'
+  end
 
-def make_admin
-  update(role: 'admin')
+  private
+
+  def set_default_role
+    self.role ||= :user
+  end
 end

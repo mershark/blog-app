@@ -8,8 +8,8 @@
     Likes: <%= post.likes_counter.to_i %>
   </p>
 
-  <% if can? :destroy, @post %>
-    <%= button_to 'Delete Post', user_post_path(@post.author, @post), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }, class: 'delete-button' %>
+  <% if can? :destroy, post %>
+    <%= button_to 'Delete Post', user_post_path(post.author, post), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }, class: 'delete-button' %>
   <% end %>
 </div>
 
