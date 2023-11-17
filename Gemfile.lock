@@ -97,10 +97,6 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise_token_auth (1.2.2)
-      bcrypt (~> 3.0)
-      devise (> 3.5.2, < 5)
-      rails (>= 4.2.0, < 7.1)
     diff-lcs (1.5.0)
     erubi (1.12.0)
     factory_bot (6.2.1)
@@ -225,6 +221,11 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
+    rswag-api (2.11.0)
+      railties (>= 3.1, < 7.2)
+    rswag-ui (2.11.0)
+      actionpack (>= 3.1, < 7.2)
+      railties (>= 3.1, < 7.2)
     rubocop (1.57.0)
       base64 (~> 0.1.1)
       json (~> 2.3)
@@ -290,7 +291,6 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9)
-  devise_token_auth
   factory_bot_rails
   importmap-rails
   jbuilder
@@ -300,6 +300,8 @@ DEPENDENCIES
   rails (~> 7.0.8)
   rails-controller-testing
   rspec-rails
+  rswag-api
+  rswag-ui
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
   sprockets-rails

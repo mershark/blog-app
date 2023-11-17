@@ -1,0 +1,98 @@
+swagger: '2.0'
+info:
+  title: Blog API
+  version: '1.0'
+paths:
+  /api/v1/users/{user_id}/posts:
+    get:
+      summary: Retrieves a list of posts for a user
+      parameters:
+        - name: user_id
+          in: path
+          type: integer
+          required: true
+          description: The ID of the user
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Post'
+        404:
+          description: User not found
+  /api/v1/users/{user_id}/posts/{post_id}/comments:
+    get:
+      summary: Retrieves a list of comments for a user's post
+      parameters:
+        - name: user_id
+          in: path
+          type: integer
+          required: true
+          description: The ID of the user
+        - name: post_id
+          in: path
+          type: integer
+          required: true
+          description: The ID of the post
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Comment'
+        404:
+          description: User or post not found
+    post:
+      summary: Adds a comment to a post
+      parameters:
+        - name: user_id
+          in: path
+          type: integer
+          required: true
+          description: The ID of the user
+        - name: post_id
+          in: path
+          type: integer
+          required: true
+          description: The ID of the post
+      requestBody:
+        description: Comment details
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/CommentInput'
+      responses:
+        201:
+          description: Comment added successfully
+        400:
+          description: Bad request, invalid parameters
+        404:
+          description: User or post not found
+definitions:
+  Post:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: The post ID
+      title:
+        type: string
+        description: The post title
+  Comment:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: The comment ID
+      text:
+        type: string
+        description: The comment text
+  CommentInput:
+    type: object
+    properties:
+      text:
+        type: string
+        description: The comment text
