@@ -19,5 +19,17 @@ Rails.application.routes.draw do
   end
 
   root "users#index"
-
+  
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+    
+      resources :users, only: [:index, :show] do
+        resources :posts, only: [:index] 
+      end
+  
+      resources :posts, only: [] do  
+        resources :comments, only: [:index, :create]
+      end
+    end
+  end
 end
