@@ -1,18 +1,20 @@
 module Api
   module V1
     class CommentsController < ApplicationController
+      skip_before_action :verify_authenticity_token
+
+      # GET /users/:user_id/posts/:post_id/comments
       def index
-        user = User.find(params[:user_id])
-        post = user.posts.find(params[:post_id])
+        post = User.find(params[:user_id]).posts.find(params[:post_id])
         comments = post.comments
         render json: comments
       end
 
+      # POST /users/:user_id/posts/:post_id/comments
       def create
-        user = User.find(params[:user_id])
-        post = user.posts.find(params[:post_id])
+        post = User.find(params[:user_id]).posts.find(params[:post_id])
         comment = post.comments.new(comment_params)
-        comment.user = current_user
+        comment.user = User.find(params[:user_id])
 
         if comment.save
           render json: comment, status: :created
