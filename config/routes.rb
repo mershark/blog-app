@@ -10,13 +10,14 @@ Rails.application.routes.draw do
   }, controllers: {
     registrations: 'registrations'
   }
-  
-  root "users#index"
 
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :new, :create, :show] do
-      resources :comments, only: [:create]
-      resources :likes 
+    resources :posts, only: [:index, :new, :create, :destroy, :show] do
+      resources :comments, only: [:create, :destroy]
+      resources :likes
     end
   end
+
+  root "users#index"
+
 end
